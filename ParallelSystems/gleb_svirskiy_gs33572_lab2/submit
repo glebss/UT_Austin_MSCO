@@ -1,0 +1,19 @@
+[Sequential]
+How_To_Compile: mkdir -p bin && nvcc kmeans_thrust.cu kmeans_cuda.cu argparse.cpp io.cpp kmeans_cpu.cpp main.cpp utils.cpp -o bin/kmeans
+Executable: bin/kmeans
+Extra_Args:
+
+[CUDA_basic]
+How_To_Compile: mkdir -p bin && nvcc kmeans_thrust.cu kmeans_cuda.cu argparse.cpp io.cpp kmeans_cpu.cpp main.cpp utils.cpp -o bin/kmeans
+Executable: bin/kmeans
+Extra_Args: --cuda
+
+[CUDA_shared]
+How_To_Compile: mkdir -p bin && nvcc kmeans_thrust.cu kmeans_cuda_shmem.cu argparse.cpp io.cpp kmeans_cpu.cpp main.cpp utils.cpp -o bin/kmeans
+Executable: bin/kmeans
+Extra_Args: --cuda
+
+[Thrust]
+How_To_Compile: mkdir -p bin && nvcc kmeans_thrust.cu kmeans_cuda.cu argparse.cpp io.cpp kmeans_cpu.cpp main.cpp utils.cpp -o bin/kmeans
+Executable: bin/kmeans
+Extra_Args: --thrust
